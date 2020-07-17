@@ -98,9 +98,11 @@ class Action {
             let body = ""
 
             if (res.statusCode == 404)
+                console.log('## FOO ##')
                 this._pushPackage(this.version, this.packageName)
 
             if (res.statusCode == 200) {
+                console.log('## BAR ##')
                 res.setEncoding("utf8")
                 res.on("data", chunk => body += chunk)
                 res.on("end", () => {
